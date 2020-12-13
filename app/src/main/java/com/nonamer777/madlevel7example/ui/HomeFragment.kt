@@ -1,6 +1,7 @@
 package com.nonamer777.madlevel7example.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +39,8 @@ class HomeFragment: Fragment() {
         quizViewModel.getQuiz()
 
         quizViewModel.quiz.observe(viewLifecycleOwner, {
-            binding.btnStartQuiz.isEnabled = it.question.isBlank() || it.answer.isBlank()
+            binding.btnStartQuiz.isEnabled = it.question.isNotBlank() && it.question != "null" ||
+                it.answer.isNotBlank() && it.answer != "null"
         })
 
         binding.btnCreateQuiz.setOnClickListener {
