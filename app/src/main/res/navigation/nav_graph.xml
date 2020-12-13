@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_createQuizFragment"
             app:destination="@id/createQuizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
     </fragment>
     <fragment
         android:id="@+id/createQuizFragment"
@@ -20,6 +23,17 @@
         tools:layout="@layout/fragment_create_quiz">
         <action
             android:id="@+id/action_createQuizFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.nonamer777.madlevel7example.ui.QuizFragment"
+        android:label="@string/fragment_label_quiz"
+        tools:layout="@layout/fragment_quiz">
+        <action
+            android:id="@+id/action_quizFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />

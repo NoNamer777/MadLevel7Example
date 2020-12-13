@@ -39,7 +39,7 @@ class HomeFragment: Fragment() {
         }
 
         binding.btnStartQuiz.setOnClickListener {
-            Toast.makeText(requireContext(), "starting quiz", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_homeFragment_to_quizFragment)
         }
     }
 }
