@@ -13,4 +13,7 @@
     <string name="btn_label_create_question">create</string>
 
     <string name="fragment_label_quiz">Quiz Fragment</string>
+    <string name="notification_quiz_creation_success">Quiz was sucessfully created</string>
+    <string name="label_quiz_question" />
+    <string name="btn_answer">confirm answer</string>
 </resources>

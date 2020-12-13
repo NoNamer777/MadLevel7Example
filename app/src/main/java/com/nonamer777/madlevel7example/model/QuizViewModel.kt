@@ -3,6 +3,7 @@ package com.nonamer777.madlevel7example.model
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.nonamer777.madlevel7example.repository.QuizRepository
@@ -22,6 +23,8 @@ class QuizViewModel(application: Application): AndroidViewModel(application) {
     val createSuccess = quizRepo.createSuccess
 
     private val _error = MutableLiveData<String>()
+
+    val error: LiveData<String> get() = _error
 
     fun getQuiz() {
         viewModelScope.launch {
