@@ -5,6 +5,8 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
 import com.nonamer777.madlevel7example.R
 import com.nonamer777.madlevel7example.databinding.ActivityMainBinding
 
@@ -26,6 +28,9 @@ class MainActivity: AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         MainActivity.actionBar = supportActionBar
+
+        FirebaseFirestore.setLoggingEnabled(true)
+        FirebaseApp.initializeApp(this)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId) {
